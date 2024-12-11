@@ -1,0 +1,57 @@
+#include<iostream>
+using namespace std;
+int n;
+#define size 10
+template<class T>
+void sort(T A[size])//selection sort
+{
+    int i,j,m;
+    T temp;
+    for(i=0;i<n-1;i++)
+    {
+        m=i;
+        for(j=i+1;j<n;j++)
+        {
+            if(A[j]<A[m])
+            m=j;
+        }
+        //swapping
+        temp=A[i];
+        A[i]=A[m];
+        A[m]=temp;
+    }
+    cout<<"\nSorted array is:";
+    for(i=0;i<n;i++)
+    {
+        cout<<" "<<A[i];
+    }
+
+}
+
+int main()
+{
+    int A[size];
+    float B[size];
+    int i;
+   
+    cout<<"\nEnter total no of integer elements:";
+    cin>>n;
+    cout<<"Enter integer elements:";
+    for(i=0;i<n;i++)
+    {
+        cin>>A[i];
+    }
+   
+    sort(A);
+   
+    cout<<"\nEnter total no of float elements:";
+    cin>>n;
+    cout<<"\nEnter float elements:";
+    for(i=0;i<n;i++)
+    {
+        cin>>B[i];
+    }
+ 
+    sort(B);
+}
+
